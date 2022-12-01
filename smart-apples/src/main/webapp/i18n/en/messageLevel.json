@@ -1,0 +1,9 @@
+{
+  "smartAppleApp": {
+    "MessageLevel": {
+      "null": "",
+      "ERROR": "ERROR",
+      "INFO": "INFO"
+    }
+  }
+}

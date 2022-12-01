@@ -1,0 +1,75 @@
+application {
+  config {
+    baseName smartApple,
+    applicationType monolith,
+    packageName net.hackathon.smartapple
+    authenticationType jwt,
+    prodDatabaseType mysql,
+    clientFramework react
+  }
+  entities *
+  dto * with mapstruct
+  service * with serviceImpl
+}
+
+entity Loan {
+  hash String required maxlength(100),
+	loanAmt Integer required min(10000),
+	availableAmt Integer required min(0),
+    interestRate Integer required min(0),
+    terms Integer required min(2) max(12),
+    createAt Instant,
+    updateAt Instant,
+    currency CURRENCY,
+    status LoanStatus
+}
+
+entity LoanSubscription {
+  hash String required maxlength(100),
+	subAmt Integer required min(0),
+
+    createAt Instant,
+    updateAt Instant,
+}
+
+entity Payment {
+  hash String required maxlength(100),
+	interest Integer required min(0),
+    principal Integer required min(0)
+    createAt Instant,
+    updateAt Instant,
+}
+
+entity Message {
+	level MessageLevel required,
+    msg String maxlength(256),
+}
+
+entity Address {
+	address String required maxlength(56),
+	privatekey String required maxlength(100),
+}
+
+enum MessageLevel {
+	ERROR, INFO
+}
+
+enum CURRENCY {
+	USD
+}
+enum LoanStatus {
+    PENDING, ACTIVE, CLOSED
+}
+
+
+
+relationship ManyToOne {
+	Loan{owner} to User,
+    LoanSubscription{subscriber} to User,
+    LoanSubscription{loan} to Loan,
+    Payment{subscription} to LoanSubscription
+}
+
+relationship OneToOne {
+  Address{User} to User
+}

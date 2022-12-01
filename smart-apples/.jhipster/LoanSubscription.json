@@ -1,0 +1,47 @@
+{
+  "applications": ["smartApple"],
+  "changelogDate": "20220929111653",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "loan_subscription",
+  "fields": [
+    {
+      "fieldName": "hash",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "subAmt",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "min"],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "createAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updateAt",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "LoanSubscription",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "relationshipName": "subscriber",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "loan",
+      "relationshipName": "loan",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

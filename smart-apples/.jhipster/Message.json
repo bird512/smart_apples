@@ -1,0 +1,28 @@
+{
+  "applications": ["smartApple"],
+  "changelogDate": "20220929111853",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "message",
+  "fields": [
+    {
+      "fieldName": "level",
+      "fieldType": "MessageLevel",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ERROR,INFO"
+    },
+    {
+      "fieldName": "msg",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "256"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Message",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

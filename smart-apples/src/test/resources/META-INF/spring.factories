@@ -1,0 +1,1 @@
+org.springframework.test.context.ContextCustomizerFactory = net.hackathon.smartapple.config.TestContainersSpringContextCustomizerFactory

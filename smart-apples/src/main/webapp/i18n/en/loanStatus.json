@@ -1,0 +1,10 @@
+{
+  "smartAppleApp": {
+    "LoanStatus": {
+      "null": "",
+      "PENDING": "PENDING",
+      "ACTIVE": "ACTIVE",
+      "CLOSED": "CLOSED"
+    }
+  }
+}

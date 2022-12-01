@@ -1,0 +1,71 @@
+{
+  "applications": ["smartApple"],
+  "changelogDate": "20220929111553",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "loan",
+  "fields": [
+    {
+      "fieldName": "hash",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "loanAmt",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "min"],
+      "fieldValidateRulesMin": "10000"
+    },
+    {
+      "fieldName": "availableAmt",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "min"],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "interestRate",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "min"],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "terms",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "min", "max"],
+      "fieldValidateRulesMax": "12",
+      "fieldValidateRulesMin": "2"
+    },
+    {
+      "fieldName": "createAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updateAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "currency",
+      "fieldType": "CURRENCY",
+      "fieldValues": "USD"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "LoanStatus",
+      "fieldValues": "PENDING,ACTIVE,CLOSED"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Loan",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "relationshipName": "owner",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

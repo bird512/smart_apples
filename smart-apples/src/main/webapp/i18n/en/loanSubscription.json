@@ -1,0 +1,29 @@
+{
+  "smartAppleApp": {
+    "loanSubscription": {
+      "home": {
+        "title": "Loan Subscriptions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Loan Subscription",
+        "createOrEditLabel": "Create or edit a Loan Subscription",
+        "notFound": "No Loan Subscriptions found"
+      },
+      "created": "A new Loan Subscription is created with identifier {{ param }}",
+      "updated": "A Loan Subscription is updated with identifier {{ param }}",
+      "deleted": "A Loan Subscription is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Loan Subscription {{ id }}?"
+      },
+      "detail": {
+        "title": "Loan Subscription"
+      },
+      "id": "ID",
+      "hash": "Hash",
+      "subAmt": "Sub Amt",
+      "createAt": "Create At",
+      "updateAt": "Update At",
+      "subscriber": "Subscriber",
+      "loan": "Loan"
+    }
+  }
+}
